@@ -24,11 +24,9 @@
   <script>
     "use strict";
 
-    const user = +prompt("Введите температуру в градусах Цельсия");
-    const temperatureCelsius = user + " °C";
-    const temperatureFahrenheit = (9 / 5) * user + 32;
-    // alert("Цельсий:" + " " + temperatureCelsius + " , Фаренгейт: " + temperatureFahrenheit); - изначательно сделала так, .toFixed(1) - разобрала из вашего дз
-    alert(`Цельсий: ${temperatureCelsius}, Фаренгейт: ${temperatureFahrenheit.toFixed(1)}`);
+    const temperatureCelsius = +prompt("Введите температуру в градусах Цельсия");
+    const temperatureFahrenheit = (9 / 5) * temperatureCelsius + 32;
+    alert(`Цельсий: ${temperatureCelsius} °C, Фаренгейт: ${temperatureFahrenheit.toFixed(1)}`);
 
   </script>
 </body>
