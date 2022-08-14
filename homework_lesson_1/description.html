@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title> 
+</head> 
+ 
+<body> 
+ 
+    <script> 
+        "use strict"; // это директива js, подсказывает на мои ошибки, строгий режим 
+ 
+        // \n перенос строк 
+        console.log('Строка1\nСтрока2'); 
+ 
+        //  экранирование символов 
+        console.log('He say - \'Hello\'!'); 
+ 
+        const str = 'absabsabs' 
+        console.log(str.length); 
+ 
+        console.log("Hello" * 10); // NaN -не число, но тип данных число 
+        console.log("5" * 10); //50 
+ 
+        // приведение типов данных 
+        const str1 = '34.1654'; 
+        console.log(+str1); // 34.1654 
+        console.log(Number(str1)); // 34.1654 
+        // console.log(str1 * 1); // здесь есть умножение на число и JS строку str1 приведет в число - не лучший вариант для приведения 
+        console.log(Number.parseInt(str1)); // 34 точка не подходит, действует как массив 
+        // console.log(Number.parseFloat(str1)); // 34.1654 
+ 
+        // нужно получить только число 
+        const str2 = '36px'; 
+        console.log(Number.parseFloat(str2)); // 36 
+ 
+        // округление чисел 
+        Math.round(2.143); // 2 
+        Math.trunc(7.564); // 7 
+        Math.floor(4.432); // 4 
+        Math.ceil(3.223); // 4 
+        Math.round(3.523 * 10) / 10; // 3.5 
+        const a = 5.123; 
+        console.log(a.toFixed(2)); // 5.12 
+        console.log(a.toFixed(5)); // 5.12300 
+        console.log(a.toFixed(1)); // 5.1 
+ 
+        // BigInt 2 ** 53 
+        let b = 3456789098765432123987654323456784567890n; 
+        b **= 2n; // возведение в степень только себе подобное 2n, bigint и number миксовать нельзя 
+        console.log(b); 
+ 
+        // null - ничего, пусто 
+        let c = null; // допустим, нужно создать переменную, но не знаешь что туда положить и для этого пишешь - null 
+ 
+        // undefined - неопределенный 
+        let d; // undefihed - создала переменную, но ничего не положила 
+        console.log(d); 
+ 
+        const e = 8; 
+        console.log(typeof e); // number 
+ 
+        // При кокатенации, если справа или слева(слева или справа, или оба) есть строковый литерал, то превратит в строку 
+        // Если оба числовые типы данных, то при конкатенции сделает математическую операцию 
+ 
+        // При сравнение разных типах данных (5 == '5') выдаст true, тк == и JS автоматически приводит к number 
+        // При 5 === '5' выдаст false - надо использовать именно === 
+ 
+        // ECMA-262 спецификация, сборник правил языка 
+ 
+ 
+ 
+    </script> 
+</body> 
+ 
+</html>
