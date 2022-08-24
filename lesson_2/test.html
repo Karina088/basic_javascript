@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+
+        let num20 = +"двадцать"; // nan
+        console.log(num20);
+
+        if (null) {
+            console.log('зашли в if');
+        } else {
+            console.log('зашли в else');
+        }
+
+        let n = 0;
+        let b = Boolean(n);
+        console.log(b); // false
+
+        let boo = Boolean(null);
+        console.log(boo); // false
+
+    </script>
+</body>
+
+</html>

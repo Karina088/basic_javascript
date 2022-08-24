@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        "use strickt";
+
+        // оператор присваивания - это одно равно =
+        // оператор сравнения - это == и === 
+        // Лучше использовать оператор строгого сравнения === , потому что он не приводит два значения к одному типу
+
+        function getSum(a, b) {
+            return a + b;
+        }
+        const sum = getSum(2, 4);
+        console.log(sum);
+
+        /*  можно проще записать:
+          function fn_sum(a, b) {
+            let sum = a + b;
+            console.log(sum);
+          }
+          fn_sum(2, 4);
+          */
+
+        // function nameSurname(firstname, lastname) {
+        //   console.log(`${firstname} ${lastname}`);
+        // }
+        // nameSurname("George", 'Makarov');
+
+        new Date().getDay();
+        new Date();
+
+        function getDay() {
+            let dayNum = new Date().getDay();
+            switch (dayNum) {
+                case 1:
+                    return "Monday";
+                case 2:
+                    return "Tuesday";
+                case 3:
+                    return "Wednesday";
+                case 4:
+                    return "Thursday";
+                case 5:
+                    return "Friday";
+                case 6:
+                    return "Saturday";
+                case 0:
+                    return "Sunday";
+            }
+        }
+        let result = getDay();
+        alert(result);
+
+        // функция с параметром по умолчанию
+        // то есть параметр, который равен какому-то значению
+        function setDiscount(discount = 10) {
+            if (discount > 10) {
+                return 30;
+            }
+            return discount;
+        }
+
+        let order1Discount = setDiscount(15); // 30
+        alert(order1Discount);
+
+        let order2Discount = setDiscount(); // 10
+        alert(order2Discount);
+
+
+        // function declaration
+        // можно вызвать до объявления функции
+        console.log(getSquare(2));
+
+        // функция возводит аргумент в квадрат
+        // @param {number} x
+        // @returns {number}
+        function getSquare(x) {
+            return x * x;
+        }
+
+        // function expression
+
+        // Uncaught ReferenceError: cannot access 'getSquare1' before initialization - выдаст ошибку, потому что анонимная функция объявдения после ее вызова и чтобы она заработала нужно вызвать после перменной
+        // console.log(getSquare1(4));
+
+        let getSquare1 = function (x) {
+            return x * x;
+        }
+
+        function clickHandler() {
+            alert('Hello');
+        }
+        /* эту функцию можно записать так: анонимная функция присваивается переменной clickHandler
+         let clickHandler = function () {
+             alert('Hello');
+         }; */
+
+        let button = document.querySelector('button');
+        // при клике на кнопку будет показывать Hello
+        button.addEventListener('click', clickhandler);
+        // clickhandler - эту функцию я не вызываю, то есть не записываю clickhandler(). При клике 'click'на эту функцию clickhandler будет вызывать, 
+        // эту функцию буду вызывать не я, а когда на эту button нажмут. 
+        // Эта функция является call back function, тк вызывается 3-ей стороной button.addEventListener(). Прямым вызовом функции -  clickHandler();
+
+        // рест оператор ...other
+        function sayHello(name, ...other) {
+            console.log('Hello' + name);
+            console.log(other);
+        }
+        sayHello('Kary', 'Ivan', 'John');
+
+        let a = 0;
+        let b = Boolean(a);
+        console.log(b);
+
+    </script>
+
+</body>
+
+</html>
