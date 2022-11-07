@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+
+        // let i = 1;
+        // while (i <= 3) {
+        //     console.log(`Hello №${i}`);
+        //     i++;
+        // }
+
+        // бесконечный цикл с прерыванием на break;
+        // либо записать вместо  while (true) - for ( ; ; )
+        // while (true) {
+        //     const userInput = prompt('Введите целое положительное число');
+        //     const userNumber = +userInput;
+        //     if (Number.isInteger(userNumber) && userNumber > 0) {
+        //         alert(`спасибо, вы ввели ${userNumber}`);
+        //         break;
+        //     }
+        //     alert(`Вы ввели ${userInput}, а вас просили ввести целое положительное число`);
+        // }
+
+        const arr = [5, 7, 100, 123];
+        for (let i = 0; i < arr.length; i++) {
+            console.log(`Под индексом "${i}" лежит значение "${arr[i]}".`);
+        }
+        const arr1 = new Array(5, 7, 100, 123);
+        arr1.reverse(); // (4) [123, 100, 7, 5]
+        console.log(arr1);
+
+        const uppArray = ['hi', 'lolo', 'ice-cream'];
+        // const upperArray = uppArray.map(function (item) {
+        //     return item.toUpperCase();
+        // });
+        const upperArray = uppArray.map(item => item.toUpperCase());
+        console.log(upperArray);
+        // (3) ['HI', 'LOLO', 'ICE-CREAM']
+        console.log(`Выводит верхний регистр ${upperArray}`);
+        // Выводит верхний регистр HI,LOLO,ICE-CREAM
+
+        const arr3 = [
+            [5, 8, 10, 21, 14],  // 0
+            [34, 9, 12], // 1
+            [11, 3], // 2
+        ];
+        console.log(arr3[0][2]); // 10
+
+        for (let i = 0; i < arr3.length; i++) {
+            console.log(arr3[i]);
+            // (5)[5, 8, 10, 21, 14]
+            // (3)[34, 9, 12]
+            // (2)[11, 3]
+        }
+
+        for (let i = 0; i < arr3.length; i++) {
+            const innerArr = arr3[i];
+            for (let j = 0; j < arr3.length; j++) {
+                console.log(innerArr[j]);
+            }
+        }
+
+        const images = [
+            '1.jpg',
+            '2.jpg',
+            '3.jpg',
+        ];
+
+        images.forEach(function (element, idx) {
+            console.log(`В массе под индексом ${idx} лежит значение ${element}`);
+        });
+        // В массе под индексом 0 лежит значение 1.jpg
+        // В массе под индексом 1 лежит значение 2.jpg
+        // В массе под индексом 2 лежит значение 3.jpg
+
+    </script>
+</body>
+
+</html>

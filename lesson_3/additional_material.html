@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const arr = {
+            name: 'Lulu',
+        }
+
+        const arr1 = {
+            name: 'Lulu',
+        }
+
+        console.log(arr === arr1); // false - всегда будет ложь, тк нельзя сравнивать объекты даже, если они пустые
+        console.log(arr.name === arr1.name); // true - потому что мы сравниваем ссылки объекта
+
+        const myArr = [9, 7, 100];
+        // смотрю прототив - просто другой объект
+        // .__photo__ свойство прототипа
+        console.log(myArr.__proto__);
+        // не все браузера поддерживают свойсво .__photo__, для этого можно использовать Object.getPrototypeOf
+        console.log(Object.getPrototypeOf(myArr));
+
+        // можно посмотреть объекта Дата
+        const data = new Date();
+        console.log(data.__proto__);
+        console.log(data.getFullYear()); // покажет год текущий
+        console.log(data.getTime());
+
+
+        // можно узнать является ли свойсво перечислимым или нет
+        let array = ['Hello', 'World'];
+        for (let i = 0; i < array.length; i++) {
+            console.log(array[i]); // выводит элементы 'Hello', 'World'
+        }
+        console.log(array.length); // показывает длину массива, мы можем к нему обратиться, хотя оно является неперечислимым
+        console.log(array.propertyIsEnumerable('lenght')); // false, проверяю является ли lenght перечислимым
+
+
+        // посмотреть собственные свойства объекта или массива
+        let array1 = [13, 675, 98, 4];
+        console.log(Object.getOwnPropertyNames(array1));
+        // (5)['0', '1', '2', '3', 'length']
+        // 0: "0"
+        // 1: "1"
+        // 2: "2"
+        // 3: "3"
+        // 4: "length"
+        // length: 5
+        // [[Prototype]]: Array(0)
+        // индексы и свойства в том числе и length: 5 являются собственными св-вами объекта
+
+        console.log('--------------------------------------------------------------');
+
+        // копирование либо присваивание по ссылке
+        let cars = ['mercedes', 'toyota', 'bmw'];
+        let autos = cars;
+        autos[0] = 'honda'; // теперь в массиве cars вместо mercedes лежит honda
+
+
+
+        let story = ['жили', 'у', 'бабуси', 'два', 'веселых', 'гуся'];
+        function changequantity(arr) {
+            arr[3] = 'три';
+        }
+        changequantity(story);
+        console.log(story); // ['жили', 'у', 'бабуси', 'три', 'веселых', 'гуся']
+
+    </script>
+
+</body>
+
+</html>

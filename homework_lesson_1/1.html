@@ -24,10 +24,16 @@
   <script>
     "use strict";
 
-    const user = +prompt("Введите температуру в градусах Цельсия");
-    const temperatureCelsius = user + " °C";
-    const temperatureFahrenheit = (9 / 5) * user + 32;
-    alert(`Цельсий: ${temperatureCelsius}, Фаренгейт: ${temperatureFahrenheit.toFixed(1)}`);
+    /* const user = +prompt("Введите температуру в градусах Цельсия");
+     const temperatureCelsius = user + " °C";
+     const temperatureFahrenheit = (9 / 5) * user + 32;
+     alert(`Цельсий: ${temperatureCelsius}, Фаренгейт: ${temperatureFahrenheit.toFixed(1)}`);*/
+
+
+    const arr = [1, 2, 3, 4, 5];
+    //  выбрать только [2, 3, 4]
+    console.log(arr[1], arr[2], arr[3]);
+    console.log(arr.slice(1, 4));
 
   </script>
 </body>
